@@ -1,0 +1,21 @@
+{
+  "name": "ww-yubico-otp",
+  "version": "1.0.0",
+  "description": "Yubico OTP Plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sjinks/ww-yubico-otp.git"
+  },
+  "author": "Volodymyr Kolesnykov <volodymyr@wildwolf.name>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "del": "^4.0.0",
+    "gulp": "^4.0.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "gulp-wp-pot": "^2.3.4"
+  }
+}

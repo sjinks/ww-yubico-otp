@@ -1,0 +1,35 @@
+{
+	"name" : "wildwolf/wp-yubico-otp",
+	"description" : "WordPress plugin to provide support for the Yubico OTP authentication",
+	"type" : "wordpress-plugin",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Volodymyr Kolesnykov",
+			"email" : "volodymyr@wildwolf.name",
+			"homepage" : "https://wildwolf.name/",
+			"role" : "Developer"
+		}
+	],
+	"keywords" : [
+		"Yubico",
+		"OTP",
+		"security",
+		"authentication",
+		"2FA",
+		"wordpress",
+		"plugin"
+	],
+	"require" : {
+		"wildwolf/yubico-otp" : "^1.0"
+	},
+	"suggest" : {
+		"wildwolf/wp-login-logger" : "WordPress plugin to log login attempts",
+		"wildwolf/ww-hide-wplogin" : "WordPress plugin to hide wp-login.php and use a custom URL for logging in",
+		"wildwolf/ww-fido-u2f" : "WordPress plugin to enable FIDO U2F authentication"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"WildWolf\\YubicoOTP\\" : "inc/"
+		}
+	}
+}

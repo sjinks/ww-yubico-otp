@@ -1,0 +1,16 @@
+build:
+    nodes:
+        analysis:
+            dependencies:
+                before:
+                    - composer require --dev johnpbloch/wordpress
+filter:
+    excluded_paths:
+        - 'assets/*.min.js'
+    dependency_paths:
+        - wordpress/
+
+checks:
+    php:
+        code_rating: true
+        duplication: true

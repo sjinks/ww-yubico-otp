@@ -1,0 +1,17 @@
+# Copyright (C) 2019 WW YubiKey OTP
+# This file is distributed under the same license as the WW YubiKey OTP package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WW YubiKey OTP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: inc/Login.php:54
+msgid "<strong>ERROR</strong>: The one time password you have entered is incorrect."
+msgstr ""
+
+#: views/login.php:3
+msgid "YubiKey OTP"
+msgstr ""
