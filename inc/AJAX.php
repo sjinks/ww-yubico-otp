@@ -55,7 +55,6 @@ final class AJAX
 
 		$res = OTPUtils::addKey($user_id, $name, $otp);
 		if (\is_scalar($res)) {
-			$error = null;
 			switch ($res) {
 				case OTPUtils::KEY_EXISTS: $error = Admin::ERROR_KEY_EXISTS; break;
 				case OTPUtils::BAD_OTP:    $error = Admin::ERROR_BAD_OTP;    break;

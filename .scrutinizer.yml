@@ -4,6 +4,10 @@ build:
             dependencies:
                 before:
                     - composer require --dev johnpbloch/wordpress
+            tests:
+                override:
+                    - php-scrutinizer-run
+
 filter:
     excluded_paths:
         - 'assets/*.min.js'

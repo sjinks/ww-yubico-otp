@@ -167,7 +167,6 @@ final class Admin
 		$res = OTPUtils::addKey(\get_current_user_id(), $name, \trim($otp));
 		if (\is_scalar($res)) {
 			WPUtils::updateSession($params);
-			$error = null;
 			switch ($res) {
 				case OTPUtils::KEY_EXISTS: $error = self::ERROR_KEY_EXISTS; break;
 				case OTPUtils::BAD_OTP:    $error = self::ERROR_BAD_OTP;    break;
