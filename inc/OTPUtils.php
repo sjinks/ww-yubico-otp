@@ -22,8 +22,8 @@ abstract class OTPUtils
 	private static function getVerifier() : OTP
 	{
 		$options = \get_option(Plugin::OPTIONS_KEY, []);
-		$id      = $options['client_id']  ?? null;
-		$key     = $options['secret_key'] ?? null;
+		$id      = $options['client_id']  ?? '';
+		$key     = $options['secret_key'] ?? '';
 		$ep      = $options['endpoints']  ?? null;
 
 		$verifier = new OTP($id, $key);
