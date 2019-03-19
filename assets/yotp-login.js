@@ -4,11 +4,18 @@ window.addEventListener('DOMContentLoaded', function() {
 	var submit    = $('wp-submit');
 	var container = $('yotp-block');
 	var input     = $('yotp');
+	var login     = $('user_login');
 
 	submit.addEventListener('click', yotpCallback);
 	container.setAttribute('hidden', '');
 	input.setAttribute('disabled', '');
 	input.setAttribute('required', '');
+
+	function loginChangeCallback(e)
+	{
+		submit.addEventListener('click', yotpCallback);
+		login.removeEventListener('change', loginChangeCallback);
+	}
 
 	function yotpCallback(e)
 	{
@@ -16,16 +23,19 @@ window.addEventListener('DOMContentLoaded', function() {
 		e.stopPropagation();
 		e.stopImmediatePropagation();
 
-		var username = $('user_login').value;
+		var username = login.value;
 		if (!username) {
 			return;
 		}
 
 		submit.removeEventListener('click', yotpCallback);
+		login.addEventListener('change', loginChangeCallback);
 
 		var req = new XMLHttpRequest();
 		req.addEventListener('load', function() {
 			if (null === this.response || this.status !== 200 || !this.response.status) {
+				input.setAttribute('disabled', '');
+				container.setAttribute('hidden', '');
 				submit.click();
 				return;
 			}

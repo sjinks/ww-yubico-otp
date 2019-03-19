@@ -31,7 +31,7 @@ final class Login
 	public function login_enqueue_scripts()
 	{
 		$suffix = \wp_scripts_get_suffix();
-		\wp_enqueue_script('yotp-login', WPUtils::assetsUrl("yotp-login{$suffix}.js"), [], '2019031800', true);
+		\wp_enqueue_script('yotp-login', WPUtils::assetsUrl("yotp-login{$suffix}.js"), [], '2019031900', true);
 		\wp_localize_script('yotp-login', 'yotpSettings', ['ajaxurl' => \admin_url('admin-ajax.php')]);
 	}
 
