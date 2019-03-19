@@ -55,12 +55,7 @@ final class AJAX
 
 		$res = OTPUtils::addKey($user_id, $name, $otp);
 		if (\is_scalar($res)) {
-			switch ($res) {
-				case OTPUtils::KEY_EXISTS: $error = Admin::ERROR_KEY_EXISTS; break;
-				case OTPUtils::BAD_OTP:    $error = Admin::ERROR_BAD_OTP;    break;
-				default:                   $error = Admin::ERROR_UNKNOWN;    break;
-			}
-
+			$error = Admin::translateErrorCode($res);
 			\wp_die(\json_encode(['ok' => false, 'message' => Admin::errorMessage($error)]));
 		}
 
@@ -80,6 +75,8 @@ final class AJAX
 
 	public function wp_ajax_wwyotp_revoke()
 	{
+		\header('Content-Type: application/json; charset=' . \get_bloginfo('charset'));
+
 		$key   = $_POST['key']      ?? '';
 		$nonce = $_POST['_wpnonce'] ?? '';
 

@@ -75,7 +75,7 @@ msgstr "Ключ успішно скасовано."
 msgid "Done."
 msgstr "Виконано."
 
-#: inc/AJAX.php:49, inc/AJAX.php:88
+#: inc/AJAX.php:49, inc/AJAX.php:84
 msgid "CSRF token does not match. Please reload the page."
 msgstr "Маркер CSRF не збігається. Будь ласка, перезавантажте сторінку."
 
@@ -104,9 +104,8 @@ msgid ""
 "You can sign up for the Client ID and Secret Key <a href=\"https://upgrade."
 "yubico.com/getapikey/\" target=\"_blank\" rel=\"noopener\">here</a>."
 msgstr ""
-"<a href=\"https://"
-"upgrade.yubico.com/getapikey/\" target=\"_blank\" rel=\"noopener\">Тут "
-"</a> можна отримати ідентифікатор клієнта та секретний ключ."
+"<a href=\"https://upgrade.yubico.com/getapikey/\" target=\"_blank\" rel="
+"\"noopener\">Тут </a> можна отримати ідентифікатор клієнта та секретний ключ."
 
 #: views/admin-settings.php:14
 msgid "Please make sure that Client ID matches the API Endpoints."

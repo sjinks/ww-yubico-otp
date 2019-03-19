@@ -149,6 +149,15 @@ final class Admin
 		WPUtils::render('user-settings', $params);
 	}
 
+	public static function translateErrorCode(int $code) : int
+	{
+		switch ($code) {
+			case OTPUtils::KEY_EXISTS: return self::ERROR_KEY_EXISTS;
+			case OTPUtils::BAD_OTP:    return self::ERROR_BAD_OTP;
+			default:                   return self::ERROR_UNKNOWN;
+		}
+	}
+
 	public function admin_post_wwyotp_add_key()
 	{
 		\check_admin_referer('wwyotp-add_key');
@@ -167,12 +176,7 @@ final class Admin
 		$res = OTPUtils::addKey(\get_current_user_id(), $name, \trim($otp));
 		if (\is_scalar($res)) {
 			WPUtils::updateSession($params);
-			switch ($res) {
-				case OTPUtils::KEY_EXISTS: $error = self::ERROR_KEY_EXISTS; break;
-				case OTPUtils::BAD_OTP:    $error = self::ERROR_BAD_OTP;    break;
-				default:                   $error = self::ERROR_UNKNOWN;    break;
-			}
-
+			$error = self::translateErrorCode($res);
 			\wp_redirect(\admin_url('users.php?page=ww-yubico-otp&error=' . $error));
 			return;
 		}

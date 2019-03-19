@@ -1,11 +1,11 @@
 /** global: yotpSettings */
 window.addEventListener('DOMContentLoaded', function() {
 	var $         = document.getElementById.bind(document);
-	var form      = $('loginform');
+	var submit    = $('wp-submit');
 	var container = $('yotp-block');
 	var input     = $('yotp');
 
-	form.addEventListener('submit', yotpCallback);
+	submit.addEventListener('click', yotpCallback);
 	container.setAttribute('hidden', '');
 	input.setAttribute('disabled', '');
 	input.setAttribute('required', '');
@@ -13,17 +13,20 @@ window.addEventListener('DOMContentLoaded', function() {
 	function yotpCallback(e)
 	{
 		e.preventDefault();
-		form.removeEventListener('submit', yotpCallback);
+		e.stopPropagation();
+		e.stopImmediatePropagation();
 
 		var username = $('user_login').value;
 		if (!username) {
-			return true;
+			return;
 		}
+
+		submit.removeEventListener('click', yotpCallback);
 
 		var req = new XMLHttpRequest();
 		req.addEventListener('load', function() {
 			if (null === this.response || this.status !== 200 || !this.response.status) {
-				form.submit();
+				submit.click();
 				return;
 			}
 

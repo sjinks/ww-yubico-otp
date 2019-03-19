@@ -75,7 +75,7 @@ msgstr "Ключ успешно отозван."
 msgid "Done."
 msgstr "Выполнено."
 
-#: inc/AJAX.php:49, inc/AJAX.php:88
+#: inc/AJAX.php:49, inc/AJAX.php:84
 msgid "CSRF token does not match. Please reload the page."
 msgstr "Токен CSRF не совпадает. Пожалуйста, перезагрузите страницу."
 
