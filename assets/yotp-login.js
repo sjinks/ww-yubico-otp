@@ -9,7 +9,6 @@ window.addEventListener('DOMContentLoaded', function() {
 	submit.addEventListener('click', yotpCallback);
 	container.setAttribute('hidden', '');
 	input.setAttribute('disabled', '');
-	input.setAttribute('required', '');
 
 	function loginChangeCallback(e)
 	{
