@@ -10,15 +10,15 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: inc/Admin.php:42
+#: inc/Admin.php:44
 msgid "Client ID"
 msgstr "ID клієнта"
 
-#: inc/Admin.php:51
+#: inc/Admin.php:53
 msgid "Secret Key"
 msgstr "Секретний ключ"
 
-#: inc/Admin.php:57
+#: inc/Admin.php:59
 msgid ""
 "If left blank, it will be impossible to verify the integrity of server "
 "responses"
@@ -26,52 +26,52 @@ msgstr ""
 "Якщо поле залишити порожнім, перевірка цілісності відповідей сервера "
 "виконуватися не буде"
 
-#: inc/Admin.php:63
+#: inc/Admin.php:65
 msgid "API Endpoints"
 msgstr "Кінцеві точки API"
 
-#: inc/Admin.php:69
+#: inc/Admin.php:71
 msgid "Leave blank to use YubiCloud servers."
 msgstr "Залиште поле порожнім, щоб використовувати сервера YubiCloud."
 
-#: inc/Admin.php:89, inc/Admin.php:90, views/admin-settings.php:3,
+#: inc/Admin.php:91, inc/Admin.php:92, views/admin-settings.php:3,
 #: views/user-settings.php:3
 msgid "Yubico OTP"
 msgstr "Yubico OTP"
 
-#: inc/Admin.php:99
+#: inc/Admin.php:101
 msgid "There was an error communicating with the server."
 msgstr "Під час спілкування з сервером сталася помилка."
 
-#: inc/Admin.php:100
+#: inc/Admin.php:102
 msgid "Are you sure you want to revoke this key?"
 msgstr "Дійсно скасувати цей ключ?"
 
-#: inc/Admin.php:114, inc/AJAX.php:53
+#: inc/Admin.php:116, inc/AJAX.php:53
 msgid "Required parameter missing."
 msgstr "Необхідний параметр відсутній."
 
-#: inc/Admin.php:115
+#: inc/Admin.php:117
 msgid "Incorrect one time password."
 msgstr "Неправильний одноразовий пароль."
 
-#: inc/Admin.php:116
+#: inc/Admin.php:118
 msgid "This key already exists."
 msgstr "Цей ключ вже існує."
 
-#: inc/Admin.php:117
+#: inc/Admin.php:119
 msgid "There was an error processing your request."
 msgstr "Під час обробки вашого запиту сталася помилка."
 
-#: inc/Admin.php:124
+#: inc/Admin.php:126
 msgid "The key has been successfully added."
 msgstr "Ключ успішно додано."
 
-#: inc/Admin.php:125
+#: inc/Admin.php:127
 msgid "The key has been successfully revoked."
 msgstr "Ключ успішно скасовано."
 
-#: inc/Admin.php:126
+#: inc/Admin.php:128
 msgid "Done."
 msgstr "Виконано."
 
