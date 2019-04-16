@@ -1,12 +1,6 @@
 /** global: yotpSettings, ajaxurl */
-window.addEventListener('DOMContentLoaded', function() {
-	var $          = document.getElementById.bind(document);
-	var form       = $('new-key-form');
-	var spinner    = form.querySelector('.spinner');
-	var btn_submit = $('submit-button');
-	var list       = $('the-list');
-	var key_name   = $('key-name');
-	var otp        = $('otp');
+(function() {
+	var $, form, spinner, btn_submit, list, key_name, otp;
 
 	function showError(msg, where)
 	{
@@ -108,58 +102,75 @@ window.addEventListener('DOMContentLoaded', function() {
 		}
 	}
 
-	document.querySelector('table.yotp th.column-actions').style.width = 0;
+	function callback() {
+		$          = document.getElementById.bind(document);
+		form       = $('new-key-form');
+		spinner    = form.querySelector('.spinner');
+		btn_submit = $('submit-button');
+		list       = $('the-list');
+		key_name   = $('key-name');
+		otp        = $('otp');
 
-	form.addEventListener('submit', function(e) {
-		e.preventDefault();
-		if (form.reportValidity()) {
-			var name  = key_name.value;
-			var code  = otp.value;
-			var nonce = $('_wpnonce').value;
-			var xhr   = new XMLHttpRequest();
+		document.querySelector('table.yotp th.column-actions').style.width = 0;
 
-			hideMessages();
-			showSpinner(true);
-			xhr.open('POST', ajaxurl);
-			xhr.addEventListener('load', keyAdded);
-			xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-			xhr.responseType = 'json';
-			xhr.send(
-				   'action=wwyotp_register'
-				+ '&n=' + encodeURIComponent(name) 
-				+ '&o=' + encodeURIComponent(code)
-				+ '&_wpnonce=' + encodeURIComponent(nonce)
-			);
-		}
-	});
+		form.addEventListener('submit', function(e) {
+			e.preventDefault();
+			if (form.reportValidity()) {
+				var name  = key_name.value;
+				var code  = otp.value;
+				var nonce = $('_wpnonce').value;
+				var xhr   = new XMLHttpRequest();
 
-	document.querySelector('table.yotp > tbody').addEventListener('click', function(e) {
-		var target = e.target;
-		while (target !== null && (!target.tagName || target.tagName.toUpperCase() !== 'BUTTON' || target.className.indexOf('revoke-button') === -1)) {
-			target = target.parentNode;
-		}
+				hideMessages();
+				showSpinner(true);
+				xhr.open('POST', ajaxurl);
+				xhr.addEventListener('load', keyAdded);
+				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+				xhr.responseType = 'json';
+				xhr.send(
+					   'action=wwyotp_register'
+					+ '&n=' + encodeURIComponent(name) 
+					+ '&o=' + encodeURIComponent(code)
+					+ '&_wpnonce=' + encodeURIComponent(nonce)
+				);
+			}
+		});
 
-		if (target && confirm(yotpSettings.revconfirm)) {
-			var key    = target.dataset.key;
-			var nonce  = target.dataset.nonce;
-			var req    = new XMLHttpRequest();
-			req.tgt    = target;
-			req.addEventListener('load', keyRevoked);
-			req.open('POST', ajaxurl);
-			req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-			req.responseType = 'json';
+		document.querySelector('table.yotp > tbody').addEventListener('click', function(e) {
+			var target = e.target;
+			while (target !== null && (!target.tagName || target.tagName.toUpperCase() !== 'BUTTON' || target.className.indexOf('revoke-button') === -1)) {
+				target = target.parentNode;
+			}
 
-			var spinner = target.querySelector('.spinner');
-			spinner.style.float = 'none';
-			spinner.style.margin = 0;
-			spinner.classList.add('is-active');
-			hideMessages();
+			if (target && confirm(yotpSettings.revconfirm)) {
+				var key    = target.dataset.key;
+				var nonce  = target.dataset.nonce;
+				var req    = new XMLHttpRequest();
+				req.tgt    = target;
+				req.addEventListener('load', keyRevoked);
+				req.open('POST', ajaxurl);
+				req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+				req.responseType = 'json';
 
-			req.send(
-				  'action=wwyotp_revoke'
-				+ '&key=' + encodeURIComponent(key) 
-				+ '&_wpnonce=' + encodeURIComponent(nonce)
-			);
-		}
-	});
-});
+				var spinner = target.querySelector('.spinner');
+				spinner.style.float = 'none';
+				spinner.style.margin = 0;
+				spinner.classList.add('is-active');
+				hideMessages();
+
+				req.send(
+					  'action=wwyotp_revoke'
+					+ '&key=' + encodeURIComponent(key) 
+					+ '&_wpnonce=' + encodeURIComponent(nonce)
+				);
+			}
+		});
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', callback);
+	}
+	else {
+		callback();
+	}
+}());

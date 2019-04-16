@@ -96,7 +96,7 @@ final class Admin
 	{
 		if ($this->user_settings_hook === $hook) {
 			$suffix = \wp_scripts_get_suffix();
-			\wp_enqueue_script('yotp-user', WPUtils::assetsUrl("yotp-user{$suffix}.js"), [], '2019031802', true);
+			\wp_enqueue_script('yotp-user', WPUtils::assetsUrl("yotp-user{$suffix}.js"), [], '2019041600', true);
 			\wp_localize_script('yotp-user', 'yotpSettings', [
 				'serverError' => \__('There was an error communicating with the server.', 'ww-yubiotp-admin'),
 				'revconfirm' => \__('Are you sure you want to revoke this key?', 'ww-yubiotp-admin'),
