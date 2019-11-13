@@ -28,12 +28,12 @@ $table->display();
 			<tbody>
 				<tr>
 					<th scope="row"><label for="key-name"><?=__('Key Name', 'ww-yubiotp-admin'); ?></label></th>
-					<td><input type="text" id="key-name" required="required" name="yotp[name]" value="<?=esc_attr($params['name']);?>"/></td>
+					<td><input type="text" id="key-name" required="required" name="yotp[name]" value="<?=esc_attr($params['name']);?>" class="regular-text"/></td>
 				</tr>
 				<tr>
 					<th scope="row"><label for="otp"><?=__('Yubico One Time Password', 'ww-yubiotp-admin'); ?></label>
 					<td>
-						<textarea id="otp" required="required" name="yotp[otp]" spellcheck="false" autocomplete="off" enterkeyhint="next" rows="2" cols="50"></textarea>
+						<textarea id="otp" required="required" name="yotp[otp]" spellcheck="false" autocomplete="off" enterkeyhint="next" rows="2" cols="50" class="regular-text"></textarea>
 						<p class="help">
 							<?=__('Please insert and tap your YubiKey to get the one time password.', 'ww-yubiotp-admin'); ?>
 						</p>

@@ -3,7 +3,7 @@
  * Plugin Name: WW Yubico OTP Authentication
  * Plugin URI:
  * Description: Provides support for the Yubico OTP authentication
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Volodymyr Kolesnykov
  * License: MIT
  * Network:

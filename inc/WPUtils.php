@@ -53,7 +53,7 @@ abstract class WPUtils
 		$value   = \esc_attr($options[$id] ?? '');
 		$help    = $args['help'] ?? '';
 		echo <<< EOT
-<input type="{$type}" name="{$name}[{$id}]" id="{$id}" value="{$value}"/>
+<input type="{$type}" name="{$name}[{$id}]" id="{$id}" value="{$value}" class="regular-text"/>
 EOT;
 		if ($help) {
 			echo <<< EOT
@@ -70,7 +70,7 @@ EOT;
 		$value   = \esc_attr($options[$id] ?? '');
 		$help    = $args['help'] ?? '';
 		echo <<< EOT
-<textarea name="{$name}[{$id}]" id="{$id}" rows="5" cols="40">{$value}</textarea>
+<textarea name="{$name}[{$id}]" id="{$id}" rows="5" cols="40" class="regular-text">{$value}</textarea>
 EOT;
 		if ($help) {
 			echo <<< EOT
