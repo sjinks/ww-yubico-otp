@@ -26,7 +26,7 @@ final class Plugin
 		\load_plugin_textdomain('ww-yubiotp-front', /** @scrutinizer ignore-type */ false, \plugin_basename(\dirname(__DIR__)) . '/lang/');
 		\register_setting('ww_yubico_otp', self::OPTIONS_KEY, ['default' => []]);
 
-		\add_action('login_init', [Login::class, 'instance']);
+		\add_action('login_form_login', [Login::class, 'instance']);
 
 		if (\is_admin()) {
 			Admin::instance();
