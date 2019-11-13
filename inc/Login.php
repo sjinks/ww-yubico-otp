@@ -21,11 +21,14 @@ final class Login
 
 	public function login_init()
 	{
-		\load_plugin_textdomain('ww-yubiotp-front', /** @scrutinizer ignore-type */ false, \plugin_basename(\dirname(__DIR__)) . '/lang/');
+		global $action;
+		if ($action === 'login') {
+			\load_plugin_textdomain('ww-yubiotp-front', /** @scrutinizer ignore-type */ false, \plugin_basename(\dirname(__DIR__)) . '/lang/');
 
-		\add_action('login_enqueue_scripts', [$this, 'login_enqueue_scripts']);
-		\add_action('login_form',            [$this, 'login_form']);
-		\add_filter('authenticate',          [$this, 'authenticate'], 999, 3);
+			\add_action('login_enqueue_scripts', [$this, 'login_enqueue_scripts']);
+			\add_action('login_form',            [$this, 'login_form']);
+			\add_filter('authenticate',          [$this, 'authenticate'], 999, 3);
+		}
 	}
 
 	public function login_enqueue_scripts()
