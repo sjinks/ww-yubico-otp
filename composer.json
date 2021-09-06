@@ -20,8 +20,8 @@
 		"plugin"
 	],
 	"require" : {
-		"wildwolf/yubico-otp" : "^1.0",
-		"wildwolf/wp-class-autoloader": "^1.1"
+		"wildwolf/yubico-otp" : "^1.0 || ^2.0",
+		"wildwolf/wp-class-autoloader": "^5.5"
 	},
 	"suggest" : {
 		"wildwolf/wp-login-logger" : "WordPress plugin to log login attempts",
