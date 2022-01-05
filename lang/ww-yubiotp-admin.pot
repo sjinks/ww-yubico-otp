@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-01-05T12:32:19+02:00\n"
+"POT-Creation-Date: 2022-01-05T14:59:03+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: ww-yubiotp-admin\n"
@@ -26,18 +26,16 @@ msgstr ""
 msgid "Volodymyr Kolesnykov"
 msgstr ""
 
-#: inc/class-admin.php:39
 #: inc/class-admin.php:40
-#: views/admin-settings.php:3
-#: views/user-settings.php:6
+#: inc/class-admin.php:41
 msgid "Yubico OTP"
 msgstr ""
 
-#: inc/class-admin.php:51
+#: inc/class-admin.php:52
 msgid "There was an error communicating with the server."
 msgstr ""
 
-#: inc/class-admin.php:52
+#: inc/class-admin.php:53
 msgid "Are you sure you want to revoke this key?"
 msgstr ""
 
@@ -54,10 +52,10 @@ msgid "If left blank, it will be impossible to verify the integrity of server re
 msgstr ""
 
 #: inc/class-adminsettings.php:62
-msgid "API Endpoints"
+msgid "API Endpoint"
 msgstr ""
 
-#: inc/class-adminsettings.php:70
+#: inc/class-adminsettings.php:68
 msgid "Leave blank to use YubiCloud servers."
 msgstr ""
 
@@ -116,11 +114,11 @@ msgstr ""
 msgid "Done."
 msgstr ""
 
-#: views/admin-settings.php:13
+#: views/admin-settings.php:18
 msgid "You can sign up for the Client ID and Secret Key <a href=\"https://upgrade.yubico.com/getapikey/\" target=\"_blank\" rel=\"noopener\">here</a>."
 msgstr ""
 
-#: views/admin-settings.php:14
+#: views/admin-settings.php:19
 msgid "Please make sure that Client ID matches the API Endpoints."
 msgstr ""
 

@@ -10,7 +10,7 @@ use WildWolf\Utils\Singleton;
  * @psalm-type SettingsArray = array{
  *  client_id: string,
  *  secret_key: string,
- *  endpoints: string
+ *  endpoint: string
  * }
  *
  * @template-implements ArrayAccess<string, scalar>
@@ -28,7 +28,7 @@ final class Settings implements ArrayAccess {
 	private static $defaults = [
 		'client_id'  => '',
 		'secret_key' => '',
-		'endpoints'  => '',
+		'endpoint'   => '',
 	];
 
 	/**
@@ -106,7 +106,7 @@ final class Settings implements ArrayAccess {
 		return $this->options['secret_key'];
 	}
 
-	public function get_endpoints(): string {
-		return $this->options['endpoints'];
+	public function get_endpoint(): string {
+		return $this->options['endpoint'];
 	}
 }

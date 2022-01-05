@@ -6,6 +6,9 @@
     "type": "git",
     "url": "git+https://github.com/sjinks/ww-yubico-otp.git"
   },
+  "scripts": {
+    "build": "rollup -c"
+  },
   "author": "Volodymyr Kolesnykov <volodymyr@wildwolf.name>",
   "license": "MIT",
   "private": true,

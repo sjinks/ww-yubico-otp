@@ -8,7 +8,8 @@ use WildWolf\WordPress\WP_Request_Context;
 final class Admin {
 	use Singleton;
 
-	public const OPTIONS_MENU_SLUG = 'ww-yubico-otp';
+	public const OPTIONS_MENU_SLUG      = 'ww-yubico-otp';
+	public const USER_OPTIONS_MENU_SLUG = 'ww-yubico-otp-user';
 
 	/** @var string|false */
 	private $user_settings_hook = false;
@@ -37,7 +38,7 @@ final class Admin {
 
 	public function admin_menu(): void {
 		add_options_page( __( 'Yubico OTP', 'ww-yubiotp-admin' ), __( 'Yubico OTP', 'ww-yubiotp-admin' ), 'manage_options', self::OPTIONS_MENU_SLUG, [ $this, 'settings_page' ] );
-		$this->user_settings_hook = add_users_page( __( 'Yubico OTP', 'ww-yubiotp-admin' ), __( 'Yubico OTP', 'ww-yubiotp-admin' ), 'read', self::OPTIONS_MENU_SLUG, [ $this, 'user_settings_page' ] );
+		$this->user_settings_hook = add_users_page( __( 'Yubico OTP', 'ww-yubiotp-admin' ), __( 'Yubico OTP', 'ww-yubiotp-admin' ), 'read', self::USER_OPTIONS_MENU_SLUG, [ $this, 'user_settings_page' ] );
 	}
 
 	/**

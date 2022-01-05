@@ -1,11 +1,16 @@
-<?php defined( 'ABSPATH' ) || die(); ?>
+<?php
+
+use WildWolf\WordPress\YubicoOTP\Admin;
+use WildWolf\WordPress\YubicoOTP\AdminSettings;
+
+defined( 'ABSPATH' ) || die(); ?>
 <div class="wrap">
-	<h1><?php esc_html_e( 'Yubico OTP', 'ww-yubiotp-admin' ); ?></h1>
+	<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
 
 	<form action="<?php echo esc_url( admin_url( 'options.php' ) ); ?>" method="post">
 	<?php
-	settings_fields( 'ww_yubico_otp' );
-	do_settings_sections( 'ww_yubico_otp' );
+	settings_fields( AdminSettings::OPTION_GROUP );
+	do_settings_sections( Admin::OPTIONS_MENU_SLUG );
 	submit_button();
 	?>
 	</form>

@@ -3,7 +3,7 @@
 /** @psalm-var array{error?: string, message?: string, name: string} $params */
 ?>
 <div class="wrap">
-	<h1><?php esc_html_e( 'Yubico OTP', 'ww-yubiotp-admin' ); ?></h1>
+	<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
 
 <?php if ( ! empty( $params['error'] ) ) : ?>
 	<div id="message" class="error fade">

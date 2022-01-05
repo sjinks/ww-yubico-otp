@@ -23,14 +23,14 @@ abstract class OTP_Utils {
 
 	private static function get_verifier(): OTP {
 		$settings = Settings::instance();
-		$id       = $settings->get_client_id();
-		$key      = $settings->get_secret_key();
-		$ep       = $settings->get_endpoints();
+		/** @psalm-var numeric-string */
+		$id  = $settings->get_client_id();
+		$key = $settings->get_secret_key();
+		$ep  = $settings->get_endpoint();
 
 		$verifier = new OTP( $id, $key );
 		if ( $ep ) {
-			$ep = array_filter( array_map( 'trim', explode( "\n", $ep ) ) );
-			$verifier->setEndpoints( $ep );
+			$verifier->setEndpoint( $ep );
 		}
 
 		return $verifier;
@@ -86,8 +86,7 @@ abstract class OTP_Utils {
 	 */
 	public static function add_key( int $user_id, string $name, string $otp ) {
 		try {
-			$parts = OTP::parsePasswordOTP( $otp );
-			/** @var string */
+			$parts  = OTP::parsePasswordOTP( $otp );
 			$prefix = $parts['prefix'];
 			$keys   = self::keys_for( $user_id );
 
@@ -129,8 +128,7 @@ abstract class OTP_Utils {
 	}
 
 	public static function update_key_usage( int $user_id, string $otp ): void {
-		$parts = OTP::parsePasswordOTP( $otp );
-		/** @var string */
+		$parts  = OTP::parsePasswordOTP( $otp );
 		$prefix = $parts['prefix'];
 		$keys   = self::keys_for( $user_id );
 		foreach ( $keys as &$entry ) {
@@ -146,8 +144,7 @@ abstract class OTP_Utils {
 
 	public static function verify_code( int $user_id, string $otp ): bool {
 		try {
-			$parts = OTP::parsePasswordOTP( $otp );
-			/** @var string */
+			$parts  = OTP::parsePasswordOTP( $otp );
 			$prefix = $parts['prefix'];
 			$keys   = self::keys_for( $user_id );
 

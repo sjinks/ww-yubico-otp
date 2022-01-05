@@ -51,21 +51,12 @@ abstract class SettingsValidator {
 				$settings['client_id'] = '';
 			}
 
-			$endpoints = explode( "\n", trim( $settings['endpoints'] ) );
-			foreach ( $endpoints as $key => &$url ) {
-				$url = filter_var( trim( $url ), FILTER_VALIDATE_URL );
-				if ( is_string( $url ) && ! preg_match( '!https?://!i', $url ) ) {
-					$url = null;
-				}
-
-				if ( ! $url ) {
-					unset( $endpoints[ $key ] );
-				} 
+			$endpoint = filter_var( trim( $settings['endpoint'] ), FILTER_VALIDATE_URL );
+			if ( is_string( $endpoint ) && ! preg_match( '!https?://!i', $endpoint ) ) {
+				$endpoint = false;
 			}
 
-			unset( $url );
-			$settings['endpoints'] = join( "\n", $endpoints );
-
+			$settings['endpoint'] = $endpoint ? $endpoint : '';
 			return $settings;
 		}
 

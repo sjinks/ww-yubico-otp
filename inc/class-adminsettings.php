@@ -32,7 +32,7 @@ final class AdminSettings {
 		);
 
 		$settings_section = 'default';
-		add_settings_section( $settings_section, '', '__return_null', 'ww_yubico_otp' );
+		add_settings_section( $settings_section, '', '__return_empty_string', Admin::OPTIONS_MENU_SLUG );
 		add_settings_field(
 			'client_id',
 			__( 'Client ID', 'ww-yubiotp-admin' ),
@@ -58,15 +58,13 @@ final class AdminSettings {
 		);
 
 		add_settings_field(
-			'endpoints',
-			__( 'API Endpoints', 'ww-yubiotp-admin' ),
-			[ $this->input_factory, 'textarea' ],
+			'endpoint',
+			__( 'API Endpoint', 'ww-yubiotp-admin' ),
+			[ $this->input_factory, 'input' ],
 			Admin::OPTIONS_MENU_SLUG,
 			$settings_section,
 			[
-				'rows'      => 5,
-				'cols'      => 40,
-				'label_for' => 'endpoints',
+				'label_for' => 'endpoint',
 				'help'      => __( 'Leave blank to use YubiCloud servers.', 'ww-yubiotp-admin' ),
 			]
 		);
