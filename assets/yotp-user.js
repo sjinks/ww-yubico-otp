@@ -47,7 +47,7 @@
 	function keyAdded()
 	{
 		showSpinner(false);
-		if (null === this.response || this.status !== 200) {
+		if (null === this.response || this.status >= 500) {
 			showError(yotpSettings.serverError, 'new-key');
 			return;
 		}

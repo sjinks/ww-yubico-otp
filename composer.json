@@ -1,16 +1,17 @@
 {
-	"name" : "wildwolf/wp-yubico-otp",
-	"description" : "WordPress plugin to provide support for the Yubico OTP authentication",
-	"type" : "wordpress-plugin",
-	"license" : "MIT",
-	"authors" : [{
-			"name" : "Volodymyr Kolesnykov",
-			"email" : "volodymyr@wildwolf.name",
-			"homepage" : "https://wildwolf.name/",
-			"role" : "Developer"
+	"name": "wildwolf/wp-yubico-otp",
+	"description": "WordPress plugin to provide support for the Yubico OTP authentication",
+	"type": "wordpress-plugin",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Volodymyr Kolesnykov",
+			"email": "volodymyr@wildwolf.name",
+			"homepage": "https://wildwolf.name/",
+			"role": "Developer"
 		}
 	],
-	"keywords" : [
+	"keywords": [
 		"Yubico",
 		"OTP",
 		"security",
@@ -19,18 +20,43 @@
 		"wordpress",
 		"plugin"
 	],
-	"require" : {
-		"wildwolf/yubico-otp" : "^1.0 || ^2.0",
-		"wildwolf/wp-class-autoloader": "^5.5"
+	"require": {
+		"php": "^7.4 || ^8.0",
+		"composer/installers": "^2.0",
+		"wildwolf/singleton-trait": "^1.0",
+		"wildwolf/wp-class-autoloader": "^5.5",
+		"wildwolf/wp-request-context": "^1.0",
+		"wildwolf/yubico-otp": "^2.0.1"
 	},
-	"suggest" : {
-		"wildwolf/wp-login-logger" : "WordPress plugin to log login attempts",
-		"wildwolf/ww-hide-wplogin" : "WordPress plugin to hide wp-login.php and use a custom URL for logging in",
-		"wildwolf/ww-fido-u2f" : "WordPress plugin to enable FIDO U2F authentication"
+	"require-dev": {
+		"automattic/vipwpcs": "^2.3",
+		"johnpbloch/wordpress-core": "^5.8",
+		"php-stubs/wordpress-stubs": "^5.8",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"vimeo/psalm": "^4.17",
+		"wp-cli/i18n-command": "^2.2"
 	},
-	"autoload" : {
-		"psr-4" : {
-			"WildWolf\\YubicoOTP\\" : "inc/"
+	"suggest": {
+		"wildwolf/wp-login-logger": "WordPress plugin to log login attempts",
+		"wildwolf/ww-hide-wplogin": "WordPress plugin to hide wp-login.php and use a custom URL for logging in",
+		"wildwolf/ww-fido-u2f": "WordPress plugin to enable FIDO U2F authentication"
+	},
+	"autoload": {
+		"classmap": [
+			"inc/"
+		]
+	},
+	"config": {
+		"sort-packages": true,
+		"allow-plugins": {
+			"composer/package-versions-deprecated": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"composer/installers": true
 		}
+	},
+	"scripts": {
+		"phpcs": "phpcs",
+		"phpcs:fix": "phpcbf",
+		"psalm": "psalm --long-progress --no-cache"
 	}
 }
