@@ -1,14 +1,32 @@
-# Copyright (C) 2019 WW YubiKey OTP
-# This file is distributed under the same license as the WW YubiKey OTP package.
+# Copyright (C) 2022 Volodymyr Kolesnykov
+# This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: WW YubiKey OTP\n"
+"Project-Id-Version: WW Yubico OTP Authentication 2.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ww-yubico-otp\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2022-01-05T12:32:19+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.5.0\n"
+"X-Domain: ww-yubiotp-front\n"
 
-#: inc/Login.php:54
+#. Plugin Name of the plugin
+msgid "WW Yubico OTP Authentication"
+msgstr ""
+
+#. Description of the plugin
+msgid "Provides support for the Yubico OTP authentication"
+msgstr ""
+
+#. Author of the plugin
+msgid "Volodymyr Kolesnykov"
+msgstr ""
+
+#: inc/class-login.php:48
 msgid "<strong>ERROR</strong>: The one time password you have entered is incorrect."
 msgstr ""
 

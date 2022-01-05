@@ -33,7 +33,8 @@
 		"johnpbloch/wordpress-core": "^5.8",
 		"php-stubs/wordpress-stubs": "^5.8",
 		"phpcompatibility/phpcompatibility-wp": "^2.1",
-		"vimeo/psalm": "^4.17"
+		"vimeo/psalm": "^4.17",
+		"wp-cli/i18n-command": "^2.2"
 	},
 	"suggest": {
 		"wildwolf/wp-login-logger": "WordPress plugin to log login attempts",

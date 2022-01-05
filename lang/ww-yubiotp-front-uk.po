@@ -3,6 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WW YubiKey OTP\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ww-yubico-otp\n"
+"POT-Creation-Date: 2022-01-05T12:28:22+02:00\n"
 "PO-Revision-Date: 2019-03-18 16:32+0200\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -11,7 +13,19 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: inc/Login.php:54
+#. Plugin Name of the plugin
+msgid "WW Yubico OTP Authentication"
+msgstr "WW Yubico OTP Authentication"
+
+#. Description of the plugin
+msgid "Provides support for the Yubico OTP authentication"
+msgstr "Підтримка автентифікації за допомогою Yubico OTP"
+
+#. Author of the plugin
+msgid "Volodymyr Kolesnykov"
+msgstr "Володимир Колесников"
+
+#: inc/class-login.php:48
 msgid ""
 "<strong>ERROR</strong>: The one time password you have entered is incorrect."
 msgstr ""

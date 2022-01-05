@@ -1,0 +1,13 @@
+*.sh                    text eol=lf
+*.dist                  export-ignore
+/.*                     export-ignore
+/bin/                   export-ignore
+/lang/*.po              export-ignore
+/lang/*.pot             export-ignore
+/lang/Makefile          export-ignore
+/tests/                 export-ignore
+/*.yml                  export-ignore
+/rollup.config.js       export-ignore
+/package-lock.json      export-ignore
+/package.json           export-ignore
+/*.stubs                export-ignore
