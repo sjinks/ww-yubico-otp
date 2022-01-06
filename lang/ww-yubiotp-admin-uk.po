@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WW YubiKey OTP\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ww-yubico-otp\n"
-"POT-Creation-Date: 2022-01-05T14:58:22+02:00\n"
+"POT-Creation-Date: 2022-01-06T07:38:44+02:00\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,15 +24,15 @@ msgstr "Підтримка автентифікації за допомогою 
 msgid "Volodymyr Kolesnykov"
 msgstr "Володимир Колесников"
 
-#: inc/class-admin.php:40 inc/class-admin.php:41
+#: inc/class-admin.php:38 inc/class-admin.php:39
 msgid "Yubico OTP"
 msgstr "Yubico OTP"
 
-#: inc/class-admin.php:52
+#: inc/class-admin.php:50
 msgid "There was an error communicating with the server."
 msgstr "Під час спілкування з сервером сталася помилка."
 
-#: inc/class-admin.php:53
+#: inc/class-admin.php:51
 msgid "Are you sure you want to revoke this key?"
 msgstr "Дійсно скасувати цей ключ?"
 
@@ -68,7 +68,7 @@ msgstr "Необхідний параметр відсутній."
 msgid "CSRF token does not match. Please reload the page."
 msgstr "Маркер CSRF не збігається. Будь ласка, перезавантажте сторінку."
 
-#: inc/class-key-table.php:28 views/user-settings.php:36
+#: inc/class-key-table.php:28 views/user-settings.php:28
 msgid "Key Name"
 msgstr "Назва ключа"
 
@@ -124,23 +124,27 @@ msgstr ""
 msgid "Please make sure that Client ID matches the API Endpoints."
 msgstr "Переконайтеся, що ID клієнта відповідає кінцевим точкам API."
 
-#: views/user-settings.php:20
+#: views/user-settings.php:7
+msgid "This page needs JavaScript."
+msgstr "Ця сторінка потребує JavaScript."
+
+#: views/user-settings.php:12
 msgid "Registered Keys"
 msgstr "Зареєстровані ключі"
 
-#: views/user-settings.php:30
+#: views/user-settings.php:22
 msgid "Add a New Key"
 msgstr "Додадти новий ключ"
 
-#: views/user-settings.php:40
+#: views/user-settings.php:32
 msgid "Yubico One Time Password"
 msgstr "Одноразовий пароль Yubico"
 
-#: views/user-settings.php:44
+#: views/user-settings.php:36
 msgid "Please insert and tap your YubiKey to get the one time password."
 msgstr ""
 "Вставте та торкніться свого ключа YubiKey, щоб отримати одноразовий пароль."
 
-#: views/user-settings.php:51
+#: views/user-settings.php:43
 msgid "Add Key"
 msgstr "Додати ключ"
