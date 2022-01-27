@@ -54,7 +54,7 @@ final class AJAX {
 		if ( is_scalar( $res ) ) {
 			wp_send_json( [
 				'ok'      => false,
-				'message' => Message::error( Message::translate_otp_error_code( $res ) ),
+				'message' => Message::error( $res ),
 			], 400 );
 		}
 

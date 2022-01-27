@@ -4,6 +4,9 @@ namespace WildWolf\WordPress\YubicoOTP;
 
 use Throwable;
 use WildWolf\Yubico\OTP;
+use WildWolf\Yubico\OTPBadResponseException;
+use WildWolf\Yubico\OTPTamperedResponseException;
+use WildWolf\Yubico\OTPTransportException;
 
 /**
  * @psalm-type Key = array{name: string, key: string, created: positive-int, last_used: positive-int}
@@ -11,9 +14,15 @@ use WildWolf\Yubico\OTP;
 abstract class OTP_Utils {
 	public const YOTP_META_KEY = '_ww_yotp';
 
-	public const KEY_EXISTS    = -1;
-	public const BAD_OTP       = -2;
-	public const UNKNOWN_ERROR = -3;
+	public const KEY_EXISTS        = -1;
+	public const BAD_OTP           = -2;
+	public const NETWORK_ERROR     = -3;
+	public const BAD_RESPONSE      = -4;
+	public const TAMPERED_RESPONSE = -5;
+	public const REPLAYED_REQUEST  = -6;
+	public const INTERNAL_ERROR    = -7;
+	public const BAD_CLIENT        = -8;
+	public const UNKNOWN_ERROR     = -10;
 
 	public static function enabled_for( int $user_id ) : bool {
 		$id   = Settings::instance()->get_client_id();
@@ -33,6 +42,7 @@ abstract class OTP_Utils {
 			$verifier->setEndpoint( $ep );
 		}
 
+		$verifier->setTransport( new WP_Transport() );
 		return $verifier;
 	}
 
@@ -95,8 +105,23 @@ abstract class OTP_Utils {
 			}
 
 			$verifier = self::get_verifier();
-			if ( ! $verifier->verify( $otp ) ) {
-				return self::BAD_OTP;
+			$response = null;
+			if ( ! $verifier->verify( $otp, null, $response ) ) {
+				switch ( $response->getStatus() ) {
+					case 'REPLAYED_OTP':
+					case 'REPLAYED_REQUEST':
+						return self::REPLAYED_REQUEST;
+
+					case 'MISSING_PARAMETER':
+						return self::INTERNAL_ERROR;
+
+					case 'NO_SUCH_CLIENT':
+					case 'OPERATION_NOT_ALLOWED':
+						return self::BAD_CLIENT;
+
+					default:
+						return self::BAD_OTP;
+				}
 			}
 
 			$now = time();
@@ -109,6 +134,12 @@ abstract class OTP_Utils {
 
 			$keys[] = $key;
 			return update_user_meta( $user_id, self::YOTP_META_KEY, $keys ) !== false ? $key : self::UNKNOWN_ERROR;
+		} catch ( OTPTransportException $e ) {
+			return self::NETWORK_ERROR;
+		} catch ( OTPBadResponseException $e ) {
+			return self::BAD_RESPONSE;
+		} catch ( OTPTamperedResponseException $e ) {
+			return self::TAMPERED_RESPONSE;
 		} catch ( Throwable $e ) {
 			return self::BAD_OTP;
 		}

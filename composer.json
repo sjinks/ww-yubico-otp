@@ -26,7 +26,7 @@
 		"wildwolf/singleton-trait": "^1.0",
 		"wildwolf/wp-class-autoloader": "^5.5",
 		"wildwolf/wp-request-context": "^1.0",
-		"wildwolf/yubico-otp": "^2.0.1"
+		"wildwolf/yubico-otp": "^3.0.2"
 	},
 	"require-dev": {
 		"automattic/vipwpcs": "^2.3",
@@ -52,6 +52,9 @@
 			"composer/package-versions-deprecated": true,
 			"dealerdirect/phpcodesniffer-composer-installer": true,
 			"composer/installers": true
+		},
+		"platform": {
+			"php": "7.4"
 		}
 	},
 	"scripts": {
