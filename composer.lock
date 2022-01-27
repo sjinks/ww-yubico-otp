@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a9cd0d8d2852fd9aa8fd4bf614584b4b",
+    "content-hash": "fbb30e5ea03709a4c334b6710c4d49cb",
     "packages": [
         {
             "name": "composer/installers",
@@ -297,16 +297,16 @@
         },
         {
             "name": "wildwolf/yubico-otp",
-            "version": "2.0.1",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sjinks/yubico-otp.git",
-                "reference": "5c4c1db10d3324953b32d941ebd56b75d871c3ef"
+                "reference": "912e4320c1d19149636c6f5c0dcbe78d89615727"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sjinks/yubico-otp/zipball/5c4c1db10d3324953b32d941ebd56b75d871c3ef",
-                "reference": "5c4c1db10d3324953b32d941ebd56b75d871c3ef",
+                "url": "https://api.github.com/repos/sjinks/yubico-otp/zipball/912e4320c1d19149636c6f5c0dcbe78d89615727",
+                "reference": "912e4320c1d19149636c6f5c0dcbe78d89615727",
                 "shasum": ""
             },
             "require": {
@@ -347,9 +347,9 @@
             ],
             "support": {
                 "issues": "https://github.com/sjinks/yubico-otp/issues",
-                "source": "https://github.com/sjinks/yubico-otp/tree/2.0.1"
+                "source": "https://github.com/sjinks/yubico-otp/tree/3.0.1"
             },
-            "time": "2022-01-05T12:44:18+00:00"
+            "time": "2022-01-06T15:15:59+00:00"
         }
     ],
     "packages-dev": [
