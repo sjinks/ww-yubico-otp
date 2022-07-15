@@ -2,7 +2,7 @@ version: '3.6'
 
 services:
   db:
-    image: mariadb:10.8
+    image: mariadb:10.8@sha256:49dd7a8f3092929fb9dbc9dd10c28d1e94a7e1e031060971dab741ba7221f807
     volumes:
       - db:/var/lib/mysql
     restart: always
@@ -16,7 +16,7 @@ services:
         ipv4_address: 172.25.0.3
 
   wordpress:
-    image: wordpress:apache
+    image: wordpress:apache@sha256:999392cfea3cee05633a0a9026fc46df637d8291e631a1afa85099ad2553e3eb
     restart: always
     environment:
       WORDPRESS_DB_HOST: db
