@@ -19,7 +19,7 @@ final class AJAX {
 
 	public function wp_ajax_yotp_check(): void {
 		// phpcs:ignore WordPress.Security.NonceVerification.Missing
-		$login = sanitize_text_field( (string) ( $_POST['l'] ?? '' ) );
+		$login = sanitize_text_field( WP_Utils::get_post_var_as_string( 'l' ) );
 		$user  = WP_Utils::get_user_by_login_or_email( $login );
 
 		if ( null !== $user ) {
@@ -33,11 +33,9 @@ final class AJAX {
 	}
 
 	public function wp_ajax_wwyotp_register(): void {
-		// phpcs:disable WordPress.Security.NonceVerification.Missing
-		$name  = sanitize_text_field( (string) ( $_POST['n'] ?? '' ) );
-		$otp   = sanitize_text_field( (string) ( $_POST['o'] ?? '' ) );
-		$nonce = sanitize_text_field( (string) ( $_POST['_wpnonce'] ?? '' ) );
-		// phpcs:enable
+		$name  = sanitize_text_field( WP_Utils::get_post_var_as_string( 'n' ) );
+		$otp   = sanitize_text_field( WP_Utils::get_post_var_as_string( 'o' ) );
+		$nonce = sanitize_text_field( WP_Utils::get_post_var_as_string( '_wpnonce' ) );
 
 		$user_id = get_current_user_id();
 
@@ -79,10 +77,8 @@ final class AJAX {
 	}
 
 	public function wp_ajax_wwyotp_revoke(): void {
-		// phpcs:disable WordPress.Security.NonceVerification.Missing
-		$key   = sanitize_text_field( (string) ( $_POST['key'] ?? '' ) );
-		$nonce = sanitize_text_field( (string) ( $_POST['_wpnonce'] ?? '' ) );
-		// phpcs:enable
+		$key   = sanitize_text_field( WP_Utils::get_post_var_as_string( 'key' ) );
+		$nonce = sanitize_text_field( WP_Utils::get_post_var_as_string( '_wpnonce' ) );
 
 		self::verify_nonce( $nonce, 'revoke-key_' . $key );
 

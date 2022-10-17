@@ -7,7 +7,7 @@ use WP_User;
 abstract class WP_Utils {
 	public static function render( string $view, array $params = [] ): void {
 		/** @psalm-suppress UnresolvableInclude */
-		require __DIR__ . '/../views/' . $view . '.php';
+		require __DIR__ . '/../views/' . $view . '.php'; // NOSONAR
 	}
 
 	public static function assets_url( string $file ) : string {
@@ -21,5 +21,11 @@ abstract class WP_Utils {
 		}
 
 		return $user ? $user : null;
+	}
+
+	public static function get_post_var_as_string( string $key ): string {
+		/** @psalm-suppress RedundantCast */
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		return isset( $_POST[ $key ] ) && is_scalar( $_POST[ $key ] ) ? (string) $_POST[ $key ] : '';
 	}
 }
