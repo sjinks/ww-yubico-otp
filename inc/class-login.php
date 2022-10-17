@@ -29,7 +29,7 @@ final class Login {
 
 	/**
 	 * @param null|WP_User|WP_Error $user
-	 * @param string $username 
+	 * @param string $username
 	 * @return null|WP_User|WP_Error
 	 */
 	public function authenticate( $user, $username ) {
@@ -40,7 +40,7 @@ final class Login {
 		$u = WP_Utils::get_user_by_login_or_email( $username );
 		if ( null !== $u ) {
 			// phpcs:ignore WordPress.Security.NonceVerification.Missing
-			$code = sanitize_text_field( (string) ( $_POST['yotp'] ?? '' ) );
+			$code = sanitize_text_field( WP_Utils::get_post_var_as_string( 'yotp' ) );
 			if ( OTP_Utils::enabled_for( $u->ID ) ) {
 				if ( ! OTP_Utils::verify_code( $u->ID, $code ) ) {
 					return new WP_Error(
