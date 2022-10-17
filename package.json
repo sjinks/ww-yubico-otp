@@ -13,9 +13,7 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "rollup": "^3.0.0",
-    "rollup-plugin-terser": "^7.0.2"
-  },
-  "dependencies": {
+    "@wwa/rollup-plugin-terser": "^1.0.1",
+    "rollup": "^3.0.0"
   }
 }

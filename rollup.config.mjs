@@ -1,4 +1,4 @@
-import { terser } from 'rollup-plugin-terser';
+import { terser } from '@wwa/rollup-plugin-terser';
 
 /**
  * @type {import('rollup').RollupOptions[]}
@@ -12,7 +12,7 @@ const config = [
         output: {
             dir: 'assets',
             preserveModules: true,
-            entryFileNames: '[name].min[extname]',
+            entryFileNames: '[name].min.js',
             format: 'esm',
             plugins: [
                 terser(),
