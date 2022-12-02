@@ -4,9 +4,17 @@ namespace WildWolf\WordPress\YubicoOTP;
 
 use WP_List_Table;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 final class Key_Table extends WP_List_Table {
 	private int $user_id;
 
+	/**
+	 * @param mixed[] $args
+	 * @psalm-param array{ajax?: bool, plural?: string, screen?: string, singular?: string, user_id?: int} $args
+	 * @psalm-suppress RedundantCastGivenDocblockType
+	 */
 	public function __construct( $args = [] ) {
 		$this->user_id = (int) ( $args['user_id'] ?? 0 );
 		unset( $args['user_id'] );
@@ -14,7 +22,7 @@ final class Key_Table extends WP_List_Table {
 	}
 
 	/**
-	 * @return void 
+	 * @return void
 	 */
 	public function prepare_items() {
 		$this->items = OTP_Utils::keys_for( $this->user_id );
@@ -33,6 +41,9 @@ final class Key_Table extends WP_List_Table {
 		];
 	}
 
+	/**
+	 * @param string[] $item
+	 */
 	protected function column_name( $item ): string {
 		$actions = [
 			'revoke' => sprintf(
@@ -47,18 +58,30 @@ final class Key_Table extends WP_List_Table {
 			. $this->row_actions( $actions, false );
 	}
 
+	/**
+	 * @param string[] $item
+	 */
 	protected function column_key( $item ): string {
 		return esc_html( $item['key'] );
 	}
 
+	/**
+	 * @param string[] $item
+	 */
 	protected function column_created( $item ) : string {
 		return self::handle_date_column( $item, 'created' );
 	}
 
+	/**
+	 * @param string[] $item
+	 */
 	protected function column_last_used( $item ) : string {
 		return self::handle_date_column( $item, 'last_used' );
 	}
 
+	/**
+	 * @param string[] $item
+	 */
 	protected function column_actions( $item ) : string {
 		$key    = esc_attr( $item['key'] );
 		$action = esc_url( admin_url( 'admin-post.php' ) );
@@ -75,13 +98,20 @@ final class Key_Table extends WP_List_Table {
 EOT;
 	}
 
+	/**
+	 * @param string[] $item
+	 */
 	private static function handle_date_column( $item, string $idx ) : string {
 		$date_format = (string) get_option( 'date_format', 'r' );
 		$time_format = (string) get_option( 'time_format', 'r' );
-		return date_i18n( $date_format . ' ' . $time_format, $item[ $idx ] );
+		return date_i18n( $date_format . ' ' . $time_format, (int) $item[ $idx ] );
 	}
 
-	protected function display_tablenav( $which ) {
+	/**
+	 * @param string $_which
+	 * @return void
+	 */
+	protected function display_tablenav( $_which ) {
 		/* Do nothing */
 	}
 }
