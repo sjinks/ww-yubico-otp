@@ -65,6 +65,7 @@ final class InputFactory {
 			esc_textarea( (string) $value ),
 		);
 
+		/** @psalm-var HelpArgs $args */
 		self::render_help( $args );
 	}
 
