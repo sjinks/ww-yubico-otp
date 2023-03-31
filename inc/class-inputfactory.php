@@ -45,6 +45,7 @@ final class InputFactory {
 			self::get_attributes( $args ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		);
 
+		/** @psalm-var HelpArgs $args */
 		self::render_help( $args );
 	}
 
@@ -65,7 +66,6 @@ final class InputFactory {
 			esc_textarea( (string) $value ),
 		);
 
-		/** @psalm-var HelpArgs $args */
 		self::render_help( $args );
 	}
 
