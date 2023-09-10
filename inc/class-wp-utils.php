@@ -5,12 +5,13 @@ namespace WildWolf\WordPress\YubicoOTP;
 use WP_User;
 
 abstract class WP_Utils {
+	// phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
 	public static function render( string $view, array $params = [] ): void {
 		/** @psalm-suppress UnresolvableInclude */
 		require __DIR__ . '/../views/' . $view . '.php'; // NOSONAR
 	}
 
-	public static function assets_url( string $file ) : string {
+	public static function assets_url( string $file ): string {
 		return plugins_url( 'assets/' . $file, dirname( __DIR__ ) . '/plugin.php' );
 	}
 

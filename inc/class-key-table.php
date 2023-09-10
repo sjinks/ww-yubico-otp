@@ -68,21 +68,21 @@ final class Key_Table extends WP_List_Table {
 	/**
 	 * @param string[] $item
 	 */
-	protected function column_created( $item ) : string {
+	protected function column_created( $item ): string {
 		return self::handle_date_column( $item, 'created' );
 	}
 
 	/**
 	 * @param string[] $item
 	 */
-	protected function column_last_used( $item ) : string {
+	protected function column_last_used( $item ): string {
 		return self::handle_date_column( $item, 'last_used' );
 	}
 
 	/**
 	 * @param string[] $item
 	 */
-	protected function column_actions( $item ) : string {
+	protected function column_actions( $item ): string {
 		$key    = esc_attr( $item['key'] );
 		$action = esc_url( admin_url( 'admin-post.php' ) );
 		$revoke = esc_attr( __( 'Revoke', 'ww-yubiotp-admin' ) );
@@ -101,7 +101,7 @@ EOT;
 	/**
 	 * @param string[] $item
 	 */
-	private static function handle_date_column( $item, string $idx ) : string {
+	private static function handle_date_column( $item, string $idx ): string {
 		$date_format = (string) get_option( 'date_format', 'r' );
 		$time_format = (string) get_option( 'time_format', 'r' );
 		return date_i18n( $date_format . ' ' . $time_format, (int) $item[ $idx ] );
