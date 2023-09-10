@@ -24,7 +24,7 @@ abstract class OTP_Utils {
 	public const BAD_CLIENT        = -8;
 	public const UNKNOWN_ERROR     = -10;
 
-	public static function enabled_for( int $user_id ) : bool {
+	public static function enabled_for( int $user_id ): bool {
 		$id   = Settings::instance()->get_client_id();
 		$keys = self::keys_for( $user_id );
 		return ! empty( $keys ) && ! empty( $id );
