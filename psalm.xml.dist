@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <psalm
     errorLevel="1"
+    findUnusedPsalmSuppress="true"
+    findUnusedBaselineEntry="true"
+    findUnusedCode="true"
     resolveFromConfigFile="true"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
@@ -12,6 +15,14 @@
             <directory name="vendor" />
         </ignoreFiles>
     </projectFiles>
+    <issueHandlers>
+        <PossiblyUnusedParam errorLevel="suppress"/>
+        <PossiblyUnusedReturnValue errorLevel="suppress"/>
+        <PossiblyUnusedMethod errorLevel="suppress"/>
+        <RedundantCast errorLevel="suppress"/>
+        <RedundantCastGivenDocblockType errorLevel="suppress"/>
+        <UnusedClass errorLevel="suppress"/>
+    </issueHandlers>
     <stubs>
         <file name="vendor/php-stubs/wordpress-stubs/wordpress-stubs.php" />
         <file name="wordpress.stubs" />
