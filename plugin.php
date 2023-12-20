@@ -11,12 +11,11 @@
 
 if ( defined( 'ABSPATH' ) ) {
 	if ( defined( 'VENDOR_PATH' ) ) {
-		/** @psalm-suppress UnresolvableInclude */
+		/** @psalm-suppress MixedOperand, UnresolvableInclude */
 		require VENDOR_PATH . '/vendor/autoload.php';
 	} elseif ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 		require __DIR__ . '/vendor/autoload.php';
 	} elseif ( file_exists( ABSPATH . 'vendor/autoload.php' ) ) {
-		/** @psalm-suppress UnresolvableInclude */
 		require ABSPATH . 'vendor/autoload.php';
 	}
 

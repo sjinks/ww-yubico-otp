@@ -62,7 +62,6 @@ final class AJAX {
 		] );
 
 		ob_start();
-		/** @psalm-suppress PossiblyInvalidArgument */
 		$table->single_row( $res );
 		$row = ob_get_clean();
 

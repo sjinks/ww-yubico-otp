@@ -1,6 +1,7 @@
 <?php
 
 namespace {
+	define( 'ABSPATH', '/wp' );
 	define( 'OBJECT', 'OBJECT' );
 	define( 'object', 'OBJECT' );
 	define( 'OBJECT_K', 'OBJECT_K' );
