@@ -17,7 +17,7 @@ abstract class WP_Utils {
 
 	public static function get_user_by_login_or_email( string $s ): ?WP_User {
 		$user = get_user_by( 'login', $s );
-		if ( ! $user && strpos( $s, '@' ) ) {
+		if ( ! $user && strpos( $s, '@' ) > 0 ) {
 			$user = get_user_by( 'email', $s );
 		}
 
