@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "83f0c2844dc0d51806b28d4d0549ff8f",
+    "content-hash": "710b588cdd823f5c314df7bd80f54789",
     "packages": [
         {
             "name": "composer/installers",
@@ -196,55 +196,6 @@
                 "source": "https://github.com/sjinks/php-singleton-trait/tree/1.0.5"
             },
             "time": "2022-02-12T18:11:27+00:00"
-        },
-        {
-            "name": "wildwolf/wp-class-autoloader",
-            "version": "5.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sjinks/wp-class-autoloader.git",
-                "reference": "d94779e1f9e195898fe3821f50cf5884d53cc496"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sjinks/wp-class-autoloader/zipball/d94779e1f9e195898fe3821f50cf5884d53cc496",
-                "reference": "d94779e1f9e195898fe3821f50cf5884d53cc496",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "wp-class-autoloader.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Volodymyr Kolesnykov",
-                    "email": "volodymyr@wildwolf.name",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Helper to load WordPress core classes automatically",
-            "homepage": "https://github.com/sjinks/wp-class-autoloader",
-            "keywords": [
-                "autoload",
-                "autoloader",
-                "class",
-                "helper",
-                "wordpress"
-            ],
-            "support": {
-                "issues": "https://github.com/sjinks/wp-class-autoloader/issues",
-                "source": "https://github.com/sjinks/wp-class-autoloader/tree/master"
-            },
-            "time": "2020-08-17T12:22:06+00:00"
         },
         {
             "name": "wildwolf/wp-request-context",
@@ -3988,11 +3939,11 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4 || ^8.0"
+        "php": "^8.1"
     },
     "platform-dev": [],
     "platform-overrides": {
-        "php": "7.4"
+        "php": "8.1"
     },
     "plugin-api-version": "2.6.0"
 }
