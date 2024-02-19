@@ -299,16 +299,16 @@
         },
         {
             "name": "wildwolf/yubico-otp",
-            "version": "3.0.2",
+            "version": "3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sjinks/yubico-otp.git",
-                "reference": "f0dff9d2d7ac9b9795a5ee0687ce675b69b0bb03"
+                "reference": "b20251f900bd040db6c1f25375a120c495de5245"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sjinks/yubico-otp/zipball/f0dff9d2d7ac9b9795a5ee0687ce675b69b0bb03",
-                "reference": "f0dff9d2d7ac9b9795a5ee0687ce675b69b0bb03",
+                "url": "https://api.github.com/repos/sjinks/yubico-otp/zipball/b20251f900bd040db6c1f25375a120c495de5245",
+                "reference": "b20251f900bd040db6c1f25375a120c495de5245",
                 "shasum": ""
             },
             "require": {
@@ -318,8 +318,8 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.5.11",
-                "psalm/plugin-phpunit": "^0.16.1",
-                "vimeo/psalm": "^4.17"
+                "psalm/plugin-phpunit": "^0.18.4",
+                "vimeo/psalm": "^5.22.1"
             },
             "type": "library",
             "autoload": {
@@ -349,9 +349,15 @@
             ],
             "support": {
                 "issues": "https://github.com/sjinks/yubico-otp/issues",
-                "source": "https://github.com/sjinks/yubico-otp/tree/3.0.2"
+                "source": "https://github.com/sjinks/yubico-otp/tree/3.0.3"
             },
-            "time": "2022-01-27T23:18:07+00:00"
+            "funding": [
+                {
+                    "url": "https://www.paypal.com/donate/?hosted_button_id=SAG6877JDJ3KU",
+                    "type": "custom"
+                }
+            ],
+            "time": "2024-02-19T23:37:18+00:00"
         }
     ],
     "packages-dev": [
