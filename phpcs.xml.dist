@@ -16,9 +16,9 @@
 	<config name="ignore_warnings_on_exit" value="true"/>
 
 	<rule ref="PHPCompatibilityWP"/>
-	<config name="testVersion" value="7.4-"/>
+	<config name="testVersion" value="8.1-"/>
 	<rule ref="WordPress-Extra"/>
-	<config name="minimum_supported_wp_version" value="5.8"/>
+	<config name="minimum_supported_wp_version" value="6.0"/>
 	<rule ref="WordPress-VIP-Go">
 		<exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket" />
 		<exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments" />

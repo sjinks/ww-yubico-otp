@@ -21,10 +21,9 @@
 		"plugin"
 	],
 	"require": {
-		"php": "^7.4 || ^8.0",
+		"php": "^8.1",
 		"composer/installers": "^2.0",
 		"wildwolf/singleton-trait": "^1.0",
-		"wildwolf/wp-class-autoloader": "^5.5",
 		"wildwolf/wp-request-context": "^1.0",
 		"wildwolf/yubico-otp": "^3.0.2"
 	},
@@ -38,8 +37,7 @@
 	},
 	"suggest": {
 		"wildwolf/wp-login-logger": "WordPress plugin to log login attempts",
-		"wildwolf/ww-hide-wplogin": "WordPress plugin to hide wp-login.php and use a custom URL for logging in",
-		"wildwolf/ww-fido-u2f": "WordPress plugin to enable FIDO U2F authentication"
+		"wildwolf/ww-hide-wplogin": "WordPress plugin to hide wp-login.php and use a custom URL for logging in"
 	},
 	"autoload": {
 		"classmap": [
@@ -54,7 +52,7 @@
 			"composer/installers": true
 		},
 		"platform": {
-			"php": "7.4"
+			"php": "8.1"
 		}
 	},
 	"scripts": {
