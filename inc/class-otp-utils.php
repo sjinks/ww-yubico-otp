@@ -49,7 +49,7 @@ abstract class OTP_Utils {
 	/**
 	 * @psalm-param Key[] $keys 
 	 */
-	private static function find_key( array $keys, string $key ): bool {
+	public static function find_key( array $keys, string $key ): bool {
 		foreach ( $keys as $entry ) {
 			if ( ! strcmp( $entry['key'], $key ) ) {
 				return true;
@@ -67,7 +67,7 @@ abstract class OTP_Utils {
 		$meta = get_user_meta( $user_id, self::YOTP_META_KEY, true );
 		if ( is_array( $meta ) ) {
 			/** @psalm-var Key[] */
-			$keys = array_filter( $meta, [ __CLASS__, 'validate_key' ] );
+			$keys = array_filter( $meta, [ self::class, 'validate_key' ] );
 			if ( $meta != $keys ) {
 				update_user_meta( $user_id, self::YOTP_META_KEY, array_values( $keys ) );
 			}
