@@ -66,8 +66,7 @@ abstract class OTP_Utils {
 		/** @var mixed */
 		$meta = get_user_meta( $user_id, self::YOTP_META_KEY, true );
 		if ( is_array( $meta ) ) {
-			/** @psalm-var Key[] */
-			$keys = array_filter( $meta, [ __CLASS__, 'validate_key' ] );
+			$keys = array_filter( $meta, [ self::class, 'validate_key' ] );
 			if ( $meta != $keys ) {
 				update_user_meta( $user_id, self::YOTP_META_KEY, array_values( $keys ) );
 			}
@@ -83,7 +82,7 @@ abstract class OTP_Utils {
 	 * @param mixed $v 
 	 * @return bool 
 	 */
-	private static function validate_key( $v ): bool {
+	public static function validate_key( $v ): bool {
 		return is_array( $v ) 
 			&& isset( $v['name'] ) && is_string( $v['name'] )
 			&& isset( $v['key'] ) && is_string( $v['key'] )

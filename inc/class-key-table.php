@@ -107,10 +107,10 @@ EOT;
 	}
 
 	/**
-	 * @param string $_which
+	 * @param string $which
 	 * @return void
 	 */
-	protected function display_tablenav( $_which ) {
+	protected function display_tablenav( $which ) {
 		/* Do nothing */
 	}
 }
