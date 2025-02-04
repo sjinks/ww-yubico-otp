@@ -1,6 +1,6 @@
 services:
   db:
-    image: mariadb:11.6@sha256:ca4d712793661643b6a2251f677c9483eaab78a605c05b31a5f0eba30caa0819
+    image: mariadb:11.6@sha256:afa422247e5be10d65ede83821b4f6f018733e3f838613ca72e7f44f1e3999f1
     volumes:
       - db:/var/lib/mysql
     restart: always
