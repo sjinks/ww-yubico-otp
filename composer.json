@@ -52,12 +52,12 @@
 			"composer/installers": true
 		},
 		"platform": {
-			"php": "8.1"
+			"php": "8.1.19"
 		}
 	},
 	"scripts": {
 		"phpcs": "phpcs",
 		"phpcs:fix": "phpcbf",
-		"psalm": "psalm --long-progress --no-cache"
+		"psalm": "psalm --long-progress --no-cache -m"
 	}
 }
