@@ -16,6 +16,7 @@
         </ignoreFiles>
     </projectFiles>
     <issueHandlers>
+        <MissingOverrideAttribute errorLevel="suppress"/>
         <PossiblyUnusedParam errorLevel="suppress"/>
         <PossiblyUnusedReturnValue errorLevel="suppress"/>
         <PossiblyUnusedMethod errorLevel="suppress"/>
