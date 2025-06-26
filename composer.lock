@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e4b850c74b672b3322dfb32aa8a8ece",
+    "content-hash": "18a607c279341c2967066c2575653943",
     "packages": [
         {
             "name": "composer/installers",
@@ -200,29 +200,29 @@
         },
         {
             "name": "wildwolf/wp-request-context",
-            "version": "1.0.1",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sjinks/wp-request-context.git",
-                "reference": "4290e30d523c64e602d3fced5eb0266f268bf98a"
+                "reference": "85a5ef5d3fc8baf472ad88733d9b346356ee6bef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sjinks/wp-request-context/zipball/4290e30d523c64e602d3fced5eb0266f268bf98a",
-                "reference": "4290e30d523c64e602d3fced5eb0266f268bf98a",
+                "url": "https://api.github.com/repos/sjinks/wp-request-context/zipball/85a5ef5d3fc8baf472ad88733d9b346356ee6bef",
+                "reference": "85a5ef5d3fc8baf472ad88733d9b346356ee6bef",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0",
-                "php": "^7.3 || ^8.0"
+                "composer/installers": "^2.0",
+                "php": "^8.1"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
                 "phpcompatibility/phpcompatibility-wp": "^2.1",
-                "phpunit/phpunit": "^9.5",
-                "psalm/plugin-phpunit": "^0.16.1",
-                "vimeo/psalm": "^4.9",
-                "wp-coding-standards/wpcs": "^2.3"
+                "phpunit/phpunit": "^10.5",
+                "psalm/plugin-phpunit": "^0.19.0",
+                "vimeo/psalm": "^6.0",
+                "wp-coding-standards/wpcs": "^3.0"
             },
             "type": "library",
             "autoload": {
@@ -245,9 +245,19 @@
             ],
             "support": {
                 "issues": "https://github.com/sjinks/wp-request-context/issues",
-                "source": "https://github.com/sjinks/wp-request-context/tree/1.0.1"
+                "source": "https://github.com/sjinks/wp-request-context/tree/2.0.0"
             },
-            "time": "2021-09-06T08:58:29+00:00"
+            "funding": [
+                {
+                    "url": "https://send.monobank.ua/jar/7rosVfiwKM",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.paypal.com/donate/?hosted_button_id=SAG6877JDJ3KU",
+                    "type": "custom"
+                }
+            ],
+            "time": "2025-06-26T05:38:47+00:00"
         },
         {
             "name": "wildwolf/yubico-otp",
