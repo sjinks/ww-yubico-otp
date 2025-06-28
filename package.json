@@ -1,6 +1,6 @@
 {
   "name": "ww-yubico-otp",
-  "version": "1.0.0",
+  "version": "3.0.1",
   "description": "Yubico OTP Plugin",
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "@wwa/rollup-plugin-terser": "^1.0.1",
-    "rollup": "^4.0.0"
+    "@wwa/rollup-plugin-terser": "^1.1.2",
+    "rollup": "^4.44.1"
   }
 }
