@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "18a607c279341c2967066c2575653943",
+    "content-hash": "72f20fe92209d7d9b3cb95f7ac879eba",
     "packages": [
         {
             "name": "composer/installers",
@@ -261,27 +261,27 @@
         },
         {
             "name": "wildwolf/yubico-otp",
-            "version": "3.0.3",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sjinks/yubico-otp.git",
-                "reference": "b20251f900bd040db6c1f25375a120c495de5245"
+                "reference": "c07ef517a75a687cdf1d319e0ffc9b83960c6d1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sjinks/yubico-otp/zipball/b20251f900bd040db6c1f25375a120c495de5245",
-                "reference": "b20251f900bd040db6c1f25375a120c495de5245",
+                "url": "https://api.github.com/repos/sjinks/yubico-otp/zipball/c07ef517a75a687cdf1d319e0ffc9b83960c6d1a",
+                "reference": "c07ef517a75a687cdf1d319e0ffc9b83960c6d1a",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "ext-openssl": "*",
-                "php": "^7.4 || ^8.0"
+                "php": "^8.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.5.11",
-                "psalm/plugin-phpunit": "^0.18.4",
-                "vimeo/psalm": "^5.22.1"
+                "psalm/plugin-phpunit": "^0.19.0",
+                "vimeo/psalm": "^6.0.0"
             },
             "type": "library",
             "autoload": {
@@ -301,7 +301,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "PHP 7-friendly alternative to the official php-yubico client",
+            "description": "Alternative to the official php-yubico client",
             "keywords": [
                 "2fa",
                 "Authentication",
@@ -311,15 +311,19 @@
             ],
             "support": {
                 "issues": "https://github.com/sjinks/yubico-otp/issues",
-                "source": "https://github.com/sjinks/yubico-otp/tree/3.0.3"
+                "source": "https://github.com/sjinks/yubico-otp/tree/4.0.0"
             },
             "funding": [
+                {
+                    "url": "https://send.monobank.ua/jar/7rosVfiwKM",
+                    "type": "custom"
+                },
                 {
                     "url": "https://www.paypal.com/donate/?hosted_button_id=SAG6877JDJ3KU",
                     "type": "custom"
                 }
             ],
-            "time": "2024-02-19T23:37:18+00:00"
+            "time": "2025-06-26T05:18:42+00:00"
         }
     ],
     "packages-dev": [
