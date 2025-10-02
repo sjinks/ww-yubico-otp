@@ -87,7 +87,7 @@ final class Key_Table extends WP_List_Table {
 		$revoke = esc_attr( __( 'Revoke', 'ww-yubiotp-admin' ) );
 		$nonce  = wp_nonce_field( 'revoke-key_' . $item['key'], '_wpnonce', true, false );
 		$nonce  = str_replace( ' id="_wpnonce"', '', $nonce );
-		return <<< EOT
+		return <<<EOT
 <form action="{$action}" method="post" class="hide-if-js">
 	<input type="hidden" name="action" value="wwyotp_revoke_key"/>
 	<input type="hidden" name="key" value="{$key}"/>
