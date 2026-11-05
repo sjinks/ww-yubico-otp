@@ -44,11 +44,13 @@ final class Key_Table extends WP_List_Table {
 	 * @param string[] $item
 	 */
 	protected function column_name( $item ): string {
+		/** @var string $nonce */
+		$nonce   = wp_create_nonce( 'revoke-key_' . $item['key'] );
 		$actions = [
 			'revoke' => sprintf(
 				'<button class="button-link hide-if-no-js revoke-button" data-key="%1$s" data-nonce="%2$s">%3$s <span class="spinner"></span></button>',
 				$item['key'],
-				wp_create_nonce( 'revoke-key_' . $item['key'] ),
+				$nonce,
 				__( 'Revoke', 'ww-yubiotp-admin' )
 			),
 		];
