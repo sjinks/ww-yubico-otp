@@ -4,9 +4,6 @@ namespace WildWolf\WordPress\YubicoOTP;
 
 use WP_List_Table;
 
-/**
- * @psalm-suppress PropertyNotSetInConstructor
- */
 final class Key_Table extends WP_List_Table {
 	private int $user_id;
 
